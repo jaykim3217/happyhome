@@ -1,23 +1,96 @@
-
-
-<header class='top-page-header'>
-  <div class='happyhome-header'>
-    <div class='happyhome-logo'>
-      <a href="#">Happyhome</a>
-    </div>
-    <div class='happyhome-header-menu'>
-      <ul class='lists-left'>
-        <li class='room-picture-menu'><a href="#">写真</a></li>
-        <li class='shop-menu'><a href="#">Shop</a></li>
-      </ul>
-      <ul class='lists-right'>
-        <li><%= link_to 'test', "#", class: "user-nickname" %></li>
-        <li><%= link_to 'ログアウト', "#", class: "logout"%></li>
-        <li><%= link_to 'ログイン', "#", class: "login"%></li>
-        <li><%= link_to '新規登録', "#", class: "sign-up"%></li>
-      </ul>
-
-    </div>
-
+<%= render "shared/header" %>
+<div class="main-contents">
+  <div class="main-picture">
+    <img src="app/images/hero.jpg" alt="トップ画面" class="top-image">
   </div>
-</header>
+  <div class="contents">
+    <div class="picture-contents">
+      <h2>お部屋STORY</h2>
+      <ul class="picture-lists">
+        <li class="list-picture">
+        <a href="#" class="picture-content">
+          <img src="images/staff1.jpg" alt="room-picture" class="room-picture-image">
+          <div class="room-info">
+            <div>お部屋説明</div>
+          </div>
+          <div class="room-user-info">
+            <div>test</div>
+          </div>
+        </a>
+        </li>
+        <li class="list-picture">
+          <a href="#" class="picture-content">
+            <img src="images/staff1.jpg" alt="room-picture" class="room-picture-image">
+            <div class="room-info">
+              <div>お部屋説明2</div>
+            </div>
+            <div class="room-user-info">
+              <div>test2</div>
+            </div>
+          </a>
+        </li>
+        <li class="list-picture">
+          <a href="#" class="picture-content">
+            <img src="images/staff1.jpg" alt="room-picture" class="room-picture-image">
+            <div class="room-info">
+              <div>お部屋説明2</div>
+            </div>
+            <div class="room-user-info">
+              <div>test2</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="items">
+    <div class="item-contents">
+      <h2>商品リスト</h2>
+    </div>
+    <ul class="item-lists">
+      <li class="item-list">
+        <a href="#", class="item-content">
+          <img src="images/staff2.jpg" alt="item-image" class="item-image">
+          <div class="brand-name">brand</div>
+          <div class="item-explain">explain</div>
+          <div class="item-price"><b>price</b></div>
+          <div class="item-review">review</div>
+          <div class="item-delivery">無料配送</div>
+        </a>
+      </li>
+      <li class="item-list">
+        <a href="#", class="item-content">
+          <img src="images/staff2.jpg" alt="item-image" class="item-image">
+          <div class="brand-name">brand</div>
+          <div class="item-explain">explain</div>
+          <div class="item-price"><b>price</b></div>
+          <div class="item-review">review</div>
+          <div class="item-delivery">無料配送</div>
+        </a>
+      </li>
+      <li class="item-list">
+        <a href="#", class="item-content">
+          <img src="images/staff2.jpg" alt="item-image" class="item-image">
+          <div class="brand-name">brand</div>
+          <div class="item-explain">explain</div>
+          <div class="item-price"><b>price</b></div>
+          <div class="item-review">review</div>
+          <div class="item-delivery">無料配送</div>
+        </a>
+      </li>
+      <li class="item-list">
+        <a href="#", class="item-content">
+          <img src="images/staff2.jpg" alt="item-image" class="item-image">
+          <div class="brand-name">brand</div>
+          <div class="item-explain">explain</div>
+          <div class="item-price"><b>price</b></div>
+          <div class="item-review">review</div>
+          <div class="item-delivery">無料配送</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
