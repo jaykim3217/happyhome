@@ -1,0 +1,71 @@
+<%# CSS・・・assets/stylesheets/tweet/new.css %>
+<%= render "shared/header" %>
+<main>
+  <div class="item-new">
+    <h2 class="item-new-head">HappyHome</h2>
+    <%= form_with model: @tweet, local: true do |f| %>
+    <div class="item-new-main">
+      <div class="item-new-title">
+        <h2>写真の情報を入力してください</h2>
+      </div>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          写真画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :image, id:"item-image" %>
+        </div>
+      </div>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        写真名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :room_name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          写真の説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :room_explain, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <div class="items-detail">
+      <div class="weight-bold-text">写真の詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          Roomのタイプ
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:room_type_id, RoomType.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+      <div class="form">
+        <div class="weight-bold-text">
+          Roomのサイズ
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:room_size_id, RoomSize.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+      <div class="form">
+        <div class="weight-bold-text">
+          空間の周類
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:space_id, Space.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+    </div>
+    
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <% end %>
+  </div>
+  
+</main>
+<%= render "shared/footer" %>

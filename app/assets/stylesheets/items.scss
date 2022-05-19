@@ -13,7 +13,7 @@
 
 .picture-lists {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .picture-content {
@@ -42,7 +42,8 @@
 
 .item-lists {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .item-content {
@@ -56,7 +57,7 @@
 
 .brand-name {
   font-size: 10px;
-  color: #DDDDDD;
+  color: gray;
   margin: 5px 0;
 }
 

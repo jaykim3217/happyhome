@@ -1,0 +1,110 @@
+main {
+  padding: 0 10vw;
+}
+
+.item-show {
+  display: flex;
+}
+
+.item-box-img {
+  height: 35vh;
+  width: 45vw;
+  min-height: 500px;
+  background-color: white;
+  object-fit: contain;
+}
+
+
+.item-show-brand-name {
+  color: gray;
+  font-size: 30px;
+}
+
+.item-show-product {
+  font-size: 40px;  
+  margin-top: 20px;
+}
+
+.item-show-price {
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+.item-show-category {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.item-show-delivery {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.item-show-order-button {
+  margin-top: 30px;
+}
+
+.item-show-order-btn {
+  text-decoration: none;
+  background-color: cadetblue;
+  color: white;
+  font-size: 30px;
+  padding: 15px 40px;
+}
+
+.item-show-cart-btn {
+  text-decoration: none;
+  background-color: cadetblue;
+  color: white;
+  font-size: 30px;
+  padding: 15px 40px;
+}
+
+
+
+
+
+
+
+.comment-box {
+  width: 40vw;
+  background-color: #fff;
+  margin: 5vh 0;
+  text-align: center;
+}
+
+.comment-text {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: solid 2px #dedede;
+  resize: none;
+}
+
+.comment-warn {
+  padding: 10px;
+  font-size: 14px;
+  margin: 10px 0px;
+  text-align: left;
+}
+
+.comment-btn {
+  line-height: 48px;
+  background-color: cadetblue;
+  border: 1px solid cadetblue;
+  color: #fff;
+  width: 50%;
+  min-width: 150px;
+  font-size: 18px;
+  border-radius: 100px;
+  margin-bottom: 2vh;
+}
+
+.comment-flag {
+  display: flex;
+  justify-content: center;
+}
+
+.comment-flag-icon {
+  margin: 10px 5px 0 0;
+}

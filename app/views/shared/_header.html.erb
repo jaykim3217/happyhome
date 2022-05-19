@@ -3,18 +3,24 @@
 <header class='top-page-header'>
   <div class='happy-home-header'>
     <div class='happy-home-logo'>
-      <a href="#", class="main-logo">Happyhome</a>
+      <%= link_to 'Happyhome', root_path, class: "main-logo" %>
     </div>
     <div class='happy-home-header-menu'>
       <ul class='lists-left'>
-        <li><a href="#", class='room-picture-menu'>写真</a></li>
+        <li><%= link_to '写真', tweets_path, class: "room-picture-menu" %></li>
         <li><a href="#", class='shop-menu'>Shop</a></li>
+        <li><%= link_to '写真投稿', new_item_path, class: "post-menu" %></li>
+        <li><%= link_to '商品出品', new_tweet_path, class: "post-menu" %></li>
       </ul>
       <ul class='lists-right'>
-        <li><a href="#", class="user-nickname">test</a></li>
-        <li><a href="#", class="logout">ログアウト</a></li>
-        <li><a href="#", class="login">ログイン</a></li>
-        <li><a href="#", class="sign-up">新規登録</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <% else %>
+          <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+          <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+          
+        <% end %>
       </ul>
     </div>
   </div>

@@ -2,45 +2,25 @@
 
 <div class="main-contents">
   <div class="main-picture">
-    <img src="images/hero.jpg" alt="トップ画面" class="top-image">
+    <%= image_tag "main.jpeg", class:"top-image" %>
   </div>
   <div class="contents">
     <div class="picture-contents">
       <h2>お部屋STORY</h2>
       <ul class="picture-lists">
+        <% @tweets.each do |tweet|%>
         <li class="list-picture">
-        <a href="#" class="picture-content">
-          <img src="images/staff1.jpg" alt="room-picture" class="room-picture-image">
-          <div class="room-info">
-            <div>お部屋説明</div>
-          </div>
-          <div class="room-user-info">
-            <div>test</div>
-          </div>
-        </a>
-        </li>
-        <li class="list-picture">
-          <a href="#" class="picture-content">
-            <img src="images/staff1.jpg" alt="room-picture" class="room-picture-image">
+        <%= link_to tweet_path(tweet.id), class: "picture-content" do %>
+            <%= image_tag tweet.image, class: "room-picture-image" if tweet.image.attached? %>
             <div class="room-info">
-              <div>お部屋説明2</div>
+              <div><%= tweet.room_name %></div>
             </div>
             <div class="room-user-info">
-              <div>test2</div>
+              <div><%= tweet.user.nickname %></div>
             </div>
-          </a>
+        <% end %>
         </li>
-        <li class="list-picture">
-          <a href="#" class="picture-content">
-            <img src="images/staff1.jpg" alt="room-picture" class="room-picture-image">
-            <div class="room-info">
-              <div>お部屋説明2</div>
-            </div>
-            <div class="room-user-info">
-              <div>test2</div>
-            </div>
-          </a>
-        </li>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -49,48 +29,22 @@
     <div class="item-contents">
       <h2>商品リスト</h2>
     </div>
+    
     <ul class="item-lists">
+    <% @items.each do |item|%>
       <li class="item-list">
-        <a href="#", class="item-content">
-          <img src="images/staff2.jpg" alt="item-image" class="item-image">
-          <div class="brand-name">brand</div>
-          <div class="item-explain">explain</div>
-          <div class="item-price"><b>price</b></div>
+        <%= link_to item_path(item.id), class: "item-content" do %>
+          <%= image_tag item.image, class: "item-image" if item.image.attached? %>
+          <div class="brand-name"><%= item.brand %></div>
+          <div class="item-explain"><%= item.explain %></div>
+          <div class="item-price"><%= item.price %><b>円</b></div>
           <div class="item-review">review</div>
           <div class="item-delivery">無料配送</div>
-        </a>
+        <% end %>
       </li>
-      <li class="item-list">
-        <a href="#", class="item-content">
-          <img src="images/staff2.jpg" alt="item-image" class="item-image">
-          <div class="brand-name">brand</div>
-          <div class="item-explain">explain</div>
-          <div class="item-price"><b>price</b></div>
-          <div class="item-review">review</div>
-          <div class="item-delivery">無料配送</div>
-        </a>
-      </li>
-      <li class="item-list">
-        <a href="#", class="item-content">
-          <img src="images/staff2.jpg" alt="item-image" class="item-image">
-          <div class="brand-name">brand</div>
-          <div class="item-explain">explain</div>
-          <div class="item-price"><b>price</b></div>
-          <div class="item-review">review</div>
-          <div class="item-delivery">無料配送</div>
-        </a>
-      </li>
-      <li class="item-list">
-        <a href="#", class="item-content">
-          <img src="images/staff2.jpg" alt="item-image" class="item-image">
-          <div class="brand-name">brand</div>
-          <div class="item-explain">explain</div>
-          <div class="item-price"><b>price</b></div>
-          <div class="item-review">review</div>
-          <div class="item-delivery">無料配送</div>
-        </a>
-      </li>
+    <% end %>
     </ul>
+   
   </div>
 </div>
 

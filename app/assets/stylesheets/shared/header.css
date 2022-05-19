@@ -22,6 +22,7 @@
   justify-content: space-between;
   font-size: 18px;
   width: 100%;
+  align-items: center;
 }
 .lists-left {
   list-style: none;
@@ -67,4 +68,9 @@
   color: black;
 }
 
+.post-menu {
+  text-decoration: none;
+  color: black;
+  margin-left: 3vw;
 
+}
